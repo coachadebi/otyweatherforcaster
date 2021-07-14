@@ -47,7 +47,9 @@
         <div class="collapse navbar-collapse" id="menu">
             <div class="navbar-nav ms-auto">
                 <a class="nav-link text-warning" href="{% url 'home' %}">Home</a>
+		    {% block team_content %}
                 <a class="nav-link text-warning" href="#team">Meet The Team</a>
+		    {% endblock %}
                 <a class="nav-link text-warning" href="{{links.github}}">
                 <i class="bi bi-github"></i> Source Code</a>
                 <a class="nav-link text-warning" href="{% url 'about' %}">About This Project</a>

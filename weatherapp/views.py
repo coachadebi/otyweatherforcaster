@@ -42,11 +42,11 @@ def home(request):
     example = ColumnDataSource(data)
     example2 = ColumnDataSource(data)
     
-    plot = figure(plot_width=370, plot_height=300)
+    plot = figure(plot_width=300, plot_height=300)
 
     plot.circle(x="Year", y="Mean", source = example,size = 10, color = "red")
     
-    plot2 = figure(plot_width=370, plot_height=300)
+    plot2 = figure(plot_width=300, plot_height=300)
 
     plot2.circle(x="Year", y="Mean", source = example2,size = 10, color = "red")
     

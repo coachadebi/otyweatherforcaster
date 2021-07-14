@@ -1,0 +1,214 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTY WEATHER FORCAST</title>
+    
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bicons.css' %}"/>
+    
+    <style>
+    body{
+        min-height : 100vh; 
+     }
+     
+    footer{
+        position : sticky;
+        top : 100%;
+       }
+       
+       
+       @media (min-width : 768px){
+           .bar_size{
+               width : 50%;
+               }
+           }
+           
+       </style>
+       
+       
+    
+    
+</head>
+
+    
+
+<body class="bg-dark">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}" >Over <span class="text-warning">To You</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">Menu
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link text-warning" href="{% url 'home' %}">Home</a>
+                <a class="nav-link text-warning" href="#">Meet The Team</a>
+                <a class="nav-link text-warning" href="{{links.github}}">
+                <i class="bi bi-github"></i> Source Code</a>
+                <a class="nav-link text-warning" href="{% url 'about' %}">About This Project</a>
+            </div>
+        </div>
+    </div>
+
+    </nav>
+    
+    {% block search_content %}
+    <section class="bg-dark p-4">
+        <div class="container bar_size">
+          <form class="d-flex" method="POST">
+          {% csrf_token %}
+            <input class="form-control me-2" type="search", placeholder="Enter City Name..." name="Search">
+            <button class="btn btn-outline-warning" type="submit">Search</button>
+          </form>
+        </div>
+    </section>
+
+	<div class="container bar_size p-4 text-center">
+    <div class="alert alert-warning">
+        
+        <!--{% if weather %}-->
+            <h3>{{weather.location}}</h3>
+		    <h3>{{weather.desciption}}</h3>
+		    <h3>{{weather.temperature}}</h3>
+		    <h3>{{weather.time_date}}</h3>
+		
+        <!--{% endif %}-->
+        </div>  
+    </div>
+    {% endblock %}
+
+
+{% block bokeh_content %}
+<section class="bg-dark p-4 text-center">
+        <div class="container me-4 text-center">
+            <div class="row">
+			  <div class="col-lg-6">
+				<div class="card bg-dark" style="width: 22rem">
+				  <div class="card-body border-0">
+					<h5 class="card-title text-warning">Annual Global Mean Temperature</h5>
+					<p class="card-text">{{script | safe}}{{div | safe}}</p>
+				  </div>
+				</div>
+			  </div>
+			  <br>
+			  <div class="col-lg-6">
+				<div class="card bg-dark" style="width: 22rem">
+				  <div class="card-body border-0">
+					<h5 class="card-title text-warning">Annual Global Mean Temperature</h5>
+					<p class="card-img">{{script2 | safe}}{{div2 | safe}}</p>
+				  </div>
+				</div>
+			  </div>
+			</div>
+        </div>
+    </section>
+{% endblock %}
+    
+
+{% block team_content %}
+    <section class="bg-dark p-4 text-center">
+        <div class="container me-4">
+            <div class="row">
+			  <div class="col-lg-6">
+				<div class="card bg-dark" style="width: 22rem">
+				<img src="{% static 'img/sample.jpg' %}" class="card-img-top rounded-circle">
+				  <div class="card-body">
+					<h5 class="card-title text-warning">Dev Sample</h5>
+					<a href="#" class="btn btn-outline-warning">Go somewhere</a>
+				  </div>
+				</div>
+			  </div>
+			  <br>
+			  <div class="col-lg-6">
+				<div class="card bg-dark" style="width: 22rem">
+				<img src="{% static 'img/coach_adebi_kolya.jpg' %}" class="card-img-top rounded-circle">
+				  <div class="card-body">
+					<h5 class="card-title text-warning">Coach Adebi</h5>
+					<a href="#" class="btn btn-outline-warning">Go somewhere</a>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</div>
+        </section>
+    {% endblock %}
+
+
+
+
+<footer class="bg-warning text-center text-light">
+  <!-- Grid container -->
+  <div class="container">
+    <!-- Section: Social media-->
+    <section class="p-4">
+      <!-- Facebook -->
+      <a
+        class="btn btn-primary m-1"
+
+        href="#!"
+        ><i class="bi bi-facebook"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        class="btn btn-primary m-1"
+        href="#!"
+        role="button"
+        ><i class="bi bi-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        class="btn btn-primary m-1"
+        href="#!"
+        role="button"
+        ><i class="bi bi-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #ac2bac;"
+        href="#!"
+        role="button"
+        ><i class="bi bi-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #0082ca;"
+        href="#!"
+        role="button"
+        ><i class="bi bi-linkedin"></i
+      ></a>
+      <!-- Github -->
+      <a
+        class="btn btn-dark m-1"
+        href="{{links.github}}"
+        ><i class="bi bi-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+    <a class="text-white" href="{% url 'home' %}">Over To You</a>
+  </div>
+  <!-- Copyright -->
+</footer>-->
+
+
+
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/bokeh.js' %}"></script>
+</body>
+</html>

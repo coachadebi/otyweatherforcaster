@@ -47,7 +47,7 @@
         <div class="collapse navbar-collapse" id="menu">
             <div class="navbar-nav ms-auto">
                 <a class="nav-link text-warning" href="{% url 'home' %}">Home</a>
-                <a class="nav-link text-warning" href="#">Meet The Team</a>
+                <a class="nav-link text-warning" href="#team">Meet The Team</a>
                 <a class="nav-link text-warning" href="{{links.github}}">
                 <i class="bi bi-github"></i> Source Code</a>
                 <a class="nav-link text-warning" href="{% url 'about' %}">About This Project</a>
@@ -111,7 +111,7 @@
     
 
 {% block team_content %}
-    <section class="bg-dark p-4 text-center">
+    <section class="bg-dark p-4 text-center" id="team">
         <div class="container me-4">
             <div class="row">
 			  <div class="col-lg-6">

@@ -13,6 +13,9 @@ import pandas as pd
 
 links = dict()
 links["github"] = "https://github.com/coachadebi/otyweatherforcaster"
+links["follow"] = "https://github.com/coachadebi"
+links["twitter"] = "https://twitter.com/nickiblanc"
+links["youtube"] = "https://www.youtube.com/channel/UCjsYPwE0qi8to8opC1Rx7CQ"
 
 
 

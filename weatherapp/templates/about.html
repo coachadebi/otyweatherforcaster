@@ -6,12 +6,42 @@
 About This
 <span class="text-warning">Project</span>
 </h1>
-<div class="alert alert-primary" role="alert">
-  A simple primary alert—check it out!
+
+<div class="alert alert-warning text-dark">
+<h5 class="text-center text-dark display-5 text-decoration-underline">Overview</h5>
+  <h5>OTY (Over To You) weather forecaster is a mini project web application built with Python's Django framework to display weather conditions for a specific city.</h5>
+
+  <h5>The  displayed weather conditions are data provided by Google's search engine ,our main source.</h5>
+
+  <h5>The data is extracted from Google's search result and the data is displayed on our website.</h5>
 </div>
+
+
+<div class="alert alert-warning text-dark">
+
+<h5 class="text-center text-dark display-5 text-decoration-underline">The Technology Behind</h5>
+<h5>A Technology known as web scraping helps in this work.</h5>
+
+<h5>As our website was built with Python, we were able to use some of it's web scraping libraries such as BeautifulSoup  and Requests.</h5>
+</div>
+
+<div class="alert alert-warning text-dark">
+<h5 class="text-center text-dark display-5 text-decoration-underline">Requests And BeautifulSoup Libraries</h5>
+<h5>The Requests library is usually used in downloading the contents of a webpage.</h5>
+
+<h5>The BeautifulSoup library is used to filter the contents which comes in as a source code of the downloaded web page in other to extract specific data within the HTML tags of the source code.</h5>
 
 </div>
 
+<div class="alert alert-warning text-dark">
+<h5 class="text-center text-dark display-5 text-decoration-underline">How It Works</h5>
+<h5>A user enters the name of a city in the search bar, the requests library collects user input and sends an HTTP request to Google's search engine. 
+The response thus the searched result webpage by Google is downloaded by the requests library which is then stored in a variable to be used by the BeautifulSoup library.</h5>
+
+<h5>The BeautifulSoup library filters the contents which comes in as a source code of the downloaded web page in other to extract specific data within the HTML tags of the source code.</h5>
+
+<h5>Extracted data with the help of BeautifulSoup is stored in a Python Dictionary and later rendered to our website</h5>
+</div>
 
 </div>
 {% endblock %}

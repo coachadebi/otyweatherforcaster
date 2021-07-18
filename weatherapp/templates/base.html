@@ -9,6 +9,8 @@
     
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/bicons.css' %}"/>
+    <link rel="icon" href="{% static 'icon/cloud-drizzle.ico' %}"/>
+    
     
     <style>
     body{
@@ -46,13 +48,16 @@
         </button>
         <div class="collapse navbar-collapse" id="menu">
             <div class="navbar-nav ms-auto">
-                <a class="nav-link text-warning" href="{% url 'home' %}">Home</a>
+                <a class="nav-link text-warning" href="{% url 'home' %}">
+                <i class="bi bi-house-door-fill"></i> Home</a>
 		    {% block meet_team_content %}
-                <a class="nav-link text-warning" href="#team">Meet The Team</a>
+                <a class="nav-link text-warning" href="#team">
+                <i class="bi bi-people-fill"></i> Meet The Team</a>
 		    {% endblock %}
                 <a class="nav-link text-warning" href="{{links.github}}">
                 <i class="bi bi-github"></i> Source Code</a>
-                <a class="nav-link text-warning" href="{% url 'about' %}">About This Project</a>
+                <a class="nav-link text-warning" href="{% url 'about' %}">
+                <i class="bi bi-file-earmark-person-fill"></i> About This Project</a>
             </div>
         </div>
     </div>
@@ -92,7 +97,7 @@
 			  <div class="col-lg-6">
 				<div class="card bg-dark bar_size">
 				  <div class="card-body border-0">
-					<h5 class="card-title text-warning">Annual Global Mean Temperature</h5>
+					<h5 class="card-title text-warning">Annual Global Mean Temperatures (2004 to 2016)</h5>
 					<p class="card-text">{{script | safe}}{{div | safe}}</p>
 				  </div>
 				</div>
@@ -101,7 +106,7 @@
 			  <div class="col-lg-6">
 				<div class="card bg-dark bar_size">
 				  <div class="card-body border-0">
-					<h5 class="card-title text-warning">Annual Global Mean Temperature</h5>
+					<h5 class="card-title text-warning">Daily Max/Min Temperatures For Ghana And Nigeria (2020-01-01 to 2020-01-10)</h5>
 					<p class="card-img">{{script2 | safe}}{{div2 | safe}}</p>
 				  </div>
 				</div>
@@ -113,15 +118,17 @@
     
 
 {% block team_content %}
-    <section class="bg-dark p-4 text-center" id="team">
+    <section class="bg-dark p-4 text-center text-warning" id="team">
         <div class="container me-4">
             <div class="row">
 			  <div class="col-lg-6">
 				<div class="card bg-dark bar_size">
 				<img src="{% static 'img/Toffic.jpg' %}" class="card-img-top rounded-circle">
 				  <div class="card-body">
-					<h5 class="card-title text-warning">Dev Sample</h5>
-					<a href="#" class="btn btn-outline-warning">Go somewhere</a>
+					<h5 class="card-title text-warning">ERIC KENNETH MENSAH</h5>
+					<p class="card-text">Student AT Takoradi Technical University</p>
+					<p class="card-text">Studying BTECH ICT</p>
+					<a href="{{links.follow}}" class="btn btn-outline-warning"><i class="bi bi-github"></i> Follow</a>
 				  </div>
 				</div>
 			  </div>
@@ -130,8 +137,10 @@
 				<div class="card bg-dark bar_size">
 				<img src="{% static 'img/coach.jpg' %}" class="card-img-top rounded-circle">
 				  <div class="card-body">
-					<h5 class="card-title text-warning">Coach Adebi</h5>
-					<a href="#" class="btn btn-outline-warning">Go somewhere</a>
+					<h5 class="card-title text-warning">NICHOLAS ADAMS ASARE</h5>
+					<p class="card-text">Student AT Takoradi Technical University</p>
+					<p class="card-text">Studying BTECH ICT</p>
+					<a href="{{links.follow}}" class="btn btn-outline-warning"><i class="bi bi-github"></i> Follow</a>
 				  </div>
 				</div>
 			  </div>
@@ -150,63 +159,39 @@
     <section class="p-4">
       <!-- Facebook -->
       <a
-        class="btn btn-primary m-1"
+        class="btn btn-danger m-1"
 
-        href="#!"
-        ><i class="bi bi-facebook"></i
-      ></a>
+        href="{{links.youtube}}"
+        ><i class="bi bi-youtube"></i
+      > Youtube</a>
 
       <!-- Twitter -->
       <a
         class="btn btn-primary m-1"
-        href="#!"
+        href="{{links.twitter}}"
         role="button"
         ><i class="bi bi-twitter"></i
-      ></a>
+      > Twitter</a>
 
-      <!-- Google -->
-      <a
-        class="btn btn-primary m-1"
-        href="#!"
-        role="button"
-        ><i class="bi bi-google"></i
-      ></a>
-
-      <!-- Instagram -->
-      <a
-        class="btn btn-primary btn-floating m-1"
-        style="background-color: #ac2bac;"
-        href="#!"
-        role="button"
-        ><i class="bi bi-instagram"></i
-      ></a>
-
-      <!-- Linkedin -->
-      <a
-        class="btn btn-primary btn-floating m-1"
-        style="background-color: #0082ca;"
-        href="#!"
-        role="button"
-        ><i class="bi bi-linkedin"></i
-      ></a>
+      
       <!-- Github -->
       <a
         class="btn btn-dark m-1"
         href="{{links.github}}"
         ><i class="bi bi-github"></i
-      ></a>
+      > Github</a>
     </section>
     <!-- Section: Social media -->
   </div>
   <!-- Grid container -->
 
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  <div class="text-center p-3 bg-dark">
     © 2021 Copyright:
-    <a class="text-white" href="{% url 'home' %}">Over To You</a>
+    <a class="navbar-brand" href="{% url 'home' %}" >Over <span class="text-warning">To You</span></a>
   </div>
   <!-- Copyright -->
-</footer>-->
+</footer>
 
 
 

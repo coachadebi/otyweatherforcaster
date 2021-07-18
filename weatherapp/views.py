@@ -13,6 +13,9 @@ import pandas as pd
 
 links = dict()
 links["github"] = "https://github.com/coachadebi/otyweatherforcaster"
+links["follow"] = "https://github.com/coachadebi"
+links["twitter"] = "https://twitter.com/nickiblanc"
+links["youtube"] = "https://www.youtube.com/channel/UCjsYPwE0qi8to8opC1Rx7CQ"
 
 
 
@@ -37,10 +40,16 @@ def home(request):
 
 
     filee = pd.read_csv("static/data/annual.csv")
+    maxx_temp = pd.read_csv("static/data/daily_temp.csv")
     data = (filee.head(26))
+    data2 = (maxx_temp.iloc[0:10])
+    data3 = (maxx_temp.iloc[113:123])
+    
 
     example = ColumnDataSource(data)
-    example2 = ColumnDataSource(data)
+    example2 = ColumnDataSource(data2)
+    example3 = ColumnDataSource(data3)
+    
     
     plot = figure(plot_width=250, plot_height=250)
 
@@ -48,7 +57,8 @@ def home(request):
     
     plot2 = figure(plot_width=250, plot_height=250)
 
-    plot2.circle(x="Year", y="Mean", source = example2,size = 10, color = "red")
+    plot2.circle(x = "temperatureMin", y = "temperatureMax", source=example2, size = 10, color = "black")
+    plot2.triangle(x = "temperatureMin", y = "temperatureMax", source=example3, size = 10, color = "green")
     
     
     hover = HoverTool()
@@ -61,9 +71,10 @@ def home(request):
 
     hover2 = HoverTool()
     hover2.tooltips=[
-    ("Source", "@Source"),
-    ('Year', '@Year'),
-    ('Mean Temperature', '@Mean')
+    ('Country', "@country"),
+    ('Date', '@time'),
+    ('Max Temperature', '@temperatureMax °F'),
+    ('Min Temperature', '@temperatureMin °F')
 ]
 
     plot.add_tools(hover)

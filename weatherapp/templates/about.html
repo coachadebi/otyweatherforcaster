@@ -6,11 +6,49 @@
 About This
 <span class="text-warning">Project</span>
 </h1>
-<div class="alert alert-primary" role="alert">
-  A simple primary alert—check it out!
+
+<div class="alert alert-warning text-dark">
+<h5 class="text-center text-dark display-5 text-decoration-underline">Overview</h5>
+  <h5>OTY (Over To You) weather forecaster is a mini project web application built with Python's Django framework (A backend web application for building and maintaining websites) and Bootstrap(A development framework built on HTML, CSS, and JavaScript to facilitate the development of responsive, mobile-first sites and apps) to display weather conditions for a specific city.</h5>
+  <h5>This webpage provides two sections.</h5>
+  <h5>Section one displays the current weather conditions including the current day and time of the specified city.</h5>
+  <h5>Section two displays a graphical representation of annual global mean temperatures from 2004 to 2016 as well as the daily maximun and minimum temperatures for Ghana and Nigeria in a time frame of 2020-01-01 to 2020-01-10.</h5>
+</div>
+  
+<div class="alert alert-warning text-dark">
+<h5 class="text-center text-dark display-5 text-decoration-underline">Section One</h5>
+  <h5>The  displayed weather conditions are data provided by Google's search engine ,our main source.</h5>
+
+  <h5>The data is extracted from Google's search result and the data is displayed on our webpage.</h5>
+
+<h6 class="text-center text-dark display-6">The Technology Behind</h6>
+<h5>A Technology known as web scraping helps in this work.</h5>
+
+<h5>As our website was built with Python, we were able to use some of it's web scraping libraries such as BeautifulSoup  and Requests.</h5>
+
+<h6 class="text-center text-dark display-6">Requests And BeautifulSoup Libraries</h6>
+<h5>The Requests library is usually used in downloading the contents of a webpage.</h5>
+
+<h5>The BeautifulSoup library is used to filter the contents which comes in as a source code of the downloaded web page in other to extract specific data within the HTML tags of the source code.</h5>
+
+<h6 class="text-center text-dark display-6 text-decoration-underline">How It Works</h6>
+<h5>A user enters the name of a city in the search bar, the Requests library collects user input and sends an HTTP request to Google's search engine. 
+The response thus the searched result webpage by Google is downloaded by the Requests library which is then stored in a variable to be used by the BeautifulSoup library.</h5>
+
+<h5>The BeautifulSoup library filters the contents which comes in as a source code of the downloaded web page in other to extract specific data within the HTML tags of the source code.</h5>
+
+<h5>Extracted data with the help of BeautifulSoup is stored in a Python Dictionary and later rendered to our webpage.</h5>
 </div>
 
-</div>
+<div class="alert alert-warning text-dark">
+<h6 class="text-center text-dark display-5 text-decoration-underline">Section Two</h6>
+
+<h5>Rendered graphs showing real world data on our webpage were made possible by Python's data interactive visualization and manipulation tools known as Bokeh and Pandas respectively.</h5>
+
+<h6 class="text-center text-dark display-6 text-decoration-underline">How It Works</h6>
+<h5>We provided csv datasets and used Pandas to manipulate data from the datasets and stored them to be used by the Bokeh library.</h5>
+<h5>The stored data are then plotted as glyphs (graphical representations) using methods by the Bokeh library and are stored in a variable and later rendered on our webpage.</h5>
+
 
 
 </div>
